@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteNote | Smart Audio to Sheet Music</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <!-- Background Decorators for Premium Look -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="app-container">
+      <header class="app-header">
+        <div class="logo-wrapper">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="logo-icon">
+            <path d="M9 18V5L21 3V16M9 18C9 19.6569 7.65685 21 6 21C4.34315 21 3 19.6569 3 18C3 16.3431 4.34315 15 6 15C7.65685 15 9 16.3431 9 18ZM21 16C21 17.6569 19.6569 19 18 19C16.3431 19 15 17.6569 15 16C15 14.3431 16.3431 13 18 13C19.6569 13 21 14.3431 21 16Z" stroke="url(#paint0_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="paint0_linear" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#818cf8" />
+                <stop offset="1" stop-color="#34d399" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <h1>NoteNote</h1>
+        </div>
+        <p class="subtitle">AI-Powered Oscilloscope & Auto Sheet Music Generator</p>
+      </header>
+      
+      <main class="app-content">
+        <section class="controls glass-panel">
+          <div class="btn-group">
+            <button id="start-btn" class="btn primary-btn">
+              <span class="btn-icon">🎤</span> Start Recording
+            </button>
+            <button id="stop-btn" class="btn danger-btn" disabled>
+              <span class="btn-icon">⏹</span> Stop Recording
+            </button>
+          </div>
+          <div class="status-indicator">
+            <span id="status-text">Ready to record</span>
+            <div class="dot-wrapper">
+              <div id="recording-dot" class="dot"></div>
+              <div id="recording-pulse" class="pulse"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="oscilloscope-container glass-panel">
+          <div class="info-overlay">
+            <div class="freq">
+              <span id="freq-val">---</span> <small>Hz</small>
+            </div>
+            <div class="note">
+              <span id="note-val">-</span>
+            </div>
+          </div>
+          <canvas id="oscilloscope" width="800" height="250"></canvas>
+        </section>
+
+        <section class="sheet-music-container glass-panel">
+          <div class="panel-header">
+            <h2>Generated Sheet Music</h2>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <span class="badge">C Major, 120 BPM</span>
+              <button id="play-btn" class="btn primary-btn" style="padding: 0.4rem 1rem; font-size: 0.9rem;" disabled>
+                <span class="btn-icon">▶</span> Play
+              </button>
+            </div>
+          </div>
+          <div id="sheet-music-output" class="sheet-music-box">
+            <div class="empty-state">
+              <span class="empty-icon">🎼</span>
+              <p class="placeholder-text">Record some audio to generate sheet music.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <footer>
+        <p>Built with ❤️ for Musicians</p>
+      </footer>
+    </div>
+    
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
