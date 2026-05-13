@@ -10,6 +10,15 @@
 - **Visual Feedback**: Real-time highlighting of notes during playback.
 - **Modern UI**: Clean, responsive design built with Vite and Vanilla CSS.
 
+## ⚡ Quick Start (Scripts)
+
+You can quickly start the development server using the provided scripts:
+
+- **macOS**: Double-click `start.command` in the Finder.
+- **Windows**: Double-click `start.bat` in the File Explorer.
+
+These scripts will automatically install dependencies and launch the Vite development server.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
